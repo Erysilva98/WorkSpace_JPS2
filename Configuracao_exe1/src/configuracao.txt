@@ -1,0 +1,15 @@
+AppId=1649240
+UserName=elamigos
+Language=brazilian
+Offline=0
+AutoDLC=0
+BuildId=10547147
+DLCName=Returnal Pre-Purchase Entitlement
+UpdateDB=1
+Signature=FitGirl
+WindowInfo=LAAAAAAAAAAIP50AAACIAAAATQMAAJACAAA=
+LVWindowInfo=AwAAADEBAAByAAAApQAAAA==
+ApplicationPath=../../../Returnal.exe
+WorkingDirectory=
+WaitForExit=1
+NoOperation=0
