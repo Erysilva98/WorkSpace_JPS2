@@ -8,9 +8,11 @@ import loja.servico.ServicoRemessa;
 public class FacadeMethod {
     public void processarPedido(Produto produto) {
         if (ServicoEstoque.isAvailable(produto)) {
+
             if (ServicoPagamento.makePayment()) {
                 ServicoRemessa.shipProduct(produto);
                 System.out.println("Pedido processado com sucesso!");
+                
             } else {
                 System.out.println("Falha no pagamento.");
             }
