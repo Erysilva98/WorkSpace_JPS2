@@ -1,6 +1,10 @@
 package dispositivos;
 
-public class Som {
+import java.io.Serializable;
+
+public class Som implements Serializable {
+    private static final long serialVersionUID = 1L;
+    
     public void on() {
         System.out.println("Som ligado.");
     }

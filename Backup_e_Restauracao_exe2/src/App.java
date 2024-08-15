@@ -9,25 +9,29 @@ public class App {
         BanheiraHidromassagem banheira = new BanheiraHidromassagem();
         PortaGaragem portaGaragem = new PortaGaragem();
         VentiladorTeto ventilador = new VentiladorTeto();
+        TV tv = new TV();
 
         // Criando o controle remoto
         ControleRemoto controle = new ControleRemoto();
 
-        // Criando comandos para os dispositivos
-        Comando ligarLuz = new LuzCommand(luz, LuzCommand.LIGAR);
-        Comando desligarLuz = new LuzCommand(luz, LuzCommand.DESLIGAR);
-        Comando ativarAlarme = new AlarmeCommand(alarme, AlarmeCommand.ATIVAR);
+        // Criando comandos para "Chegar em casa"
+        Comando abrirPortaGaragem = new PortaGaragemCommand(portaGaragem, PortaGaragemCommand.SUBIR);
         Comando desativarAlarme = new AlarmeCommand(alarme, AlarmeCommand.DESATIVAR);
-        Comando ligarJatosBanheira = new BanheiraHidromassagemCommand(banheira, BanheiraHidromassagemCommand.LIGAR_JATOS);
-        Comando subirPortaGaragem = new PortaGaragemCommand(portaGaragem, PortaGaragemCommand.SUBIR);
-        Comando ligarVentiladorAlto = new VentiladorTetoCommand(ventilador, VentiladorTetoCommand.ALTO);
+        Comando ligarLuz = new LuzCommand(luz, LuzCommand.LIGAR);
+        Comando fecharPortaGaragem = new PortaGaragemCommand(portaGaragem, PortaGaragemCommand.DESCER);
+        Comando ligarTV = new TVComando(tv, TVComando.LIGAR, 0);
+        Comando ligarVentilador = new VentiladorTetoCommand(ventilador, VentiladorTetoCommand.ALTO);
+        Comando ligarBanheira = new BanheiraHidromassagemCommand(banheira, BanheiraHidromassagemCommand.LIGAR_JATOS);
 
-        // Executando comandos e armazenando no controle remoto
+        // Simulando chegada em casa
+        System.out.println("\n Chegar em casa:");
+        controle.setComando(abrirPortaGaragem);
+        controle.setComando(desativarAlarme);
         controle.setComando(ligarLuz);
-        controle.setComando(ativarAlarme);
-        controle.setComando(ligarJatosBanheira);
-        controle.setComando(subirPortaGaragem);
-        controle.setComando(ligarVentiladorAlto);
+        controle.setComando(fecharPortaGaragem);
+        controle.setComando(ligarTV);
+        controle.setComando(ligarVentilador);
+        controle.setComando(ligarBanheira);
 
         // Desfazendo os últimos comandos
         controle.desfazerUltimoComando();
@@ -37,7 +41,7 @@ public class App {
         controle.armazenarHistorico("historico_comandos.ser");
 
         // Simulando uma falha e carregando o histórico
-        System.out.println("Simulando uma falha e recarregando os comandos...");
+        System.out.println("\n Simulando uma falha e recarregando os comandos... \n");
         controle.carregarHistorico("historico_comandos.ser");
     }
 }
