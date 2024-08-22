@@ -17,10 +17,10 @@ public class App {
     }
 
     public static void testPPay(PPay pp) {
-        System.out.println("Card Owner Name: " + pp.getCardOwnerName());
-        System.out.println("Customer Card Number: " + pp.getCustCardNo());
-        System.out.println("Card Expiry Date: " + pp.getCardExpMonthDate());
-        System.out.println("CVV Number: " + pp.getCVVNo());
-        System.out.println("Total Amount: " + pp.getTotalAmount());
+        System.out.println("Nome no Cartao: " + pp.getCardOwnerName());
+        System.out.println("Numero do Cartao: " + pp.getCustCardNo());
+        System.out.println("Data de Validade: " + pp.getCardExpMonthDate());
+        System.out.println("Numero CVV: " + pp.getCVVNo());
+        System.out.println("Valor Total: " + pp.getTotalAmount());
     }
 }

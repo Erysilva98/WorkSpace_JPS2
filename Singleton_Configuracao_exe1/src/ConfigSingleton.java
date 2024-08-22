@@ -9,7 +9,7 @@ public class ConfigSingleton {
     private Map<String, String> configuracoes;
 
     // Caminho do arquivo de configuração
-    private static final String CONFIG_FILE_PATH = "configuracao.txt";
+    private static final String CONFIG_FILE_PATH = "./Singleton_Configuracao_exe1/src/configuracao.txt";
 
     // Construtor privado para evitar instanciamento externo
     private ConfigSingleton() {
