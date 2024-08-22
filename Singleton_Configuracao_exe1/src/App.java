@@ -7,7 +7,7 @@ public class App {
         configuracao.imprimirConfiguracoes();
 
         // // Acessando configurações individuais, se necessário
-        System.out.println("\nAcessando configurações individuais:");
+        System.out.println("\nAcessando configuracoes individuais:");
         System.out.println("AppId: " + configuracao.getAppId());
         System.out.println("UserName: " + configuracao.getUserName());
         System.out.println("Language: " + configuracao.getLanguage());
